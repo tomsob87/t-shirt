@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useMemo } from 'react';
 import productsData from '../../data/products';
 import Product from '../Product/Product';
 import clsx from 'clsx';
@@ -13,13 +13,16 @@ const Products = () => {
     return styles['color' + color[0].toUpperCase() + color.substr(1).toLowerCase()]
   }
 
-  const getPrice = (index) => {
-    const basePrice = products[index].basePrice;
-    const selectedSize = currentSize[index];
-    const additionalPrice = products[index].sizes.find(size => size.name === selectedSize).additionalPrice;
+  const price = useMemo(() => {
+    return(index) => {
+      const basePrice = products[index].basePrice;
+      const selectedSize = currentSize[index];
+      const additionalPrice = products[index].sizes.find(size => size.name === selectedSize).additionalPrice;
 
     return basePrice + additionalPrice;
-  };
+    };
+  }, [currentSize, products]);
+    
 
     return (
     <section>
@@ -63,7 +66,7 @@ const Products = () => {
           </li>
         )}
 
-        getPrice={() => getPrice(index)}
+        price={() => price(index)}
 
         />
         ))}

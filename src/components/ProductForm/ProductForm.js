@@ -15,7 +15,7 @@ const ProductForm = props => {
             title={props.title}
             currentSize={props.currentSize}
             currentColor={props.currentColor}
-            getPrice={() => props.getPrice()}
+            price={() => props.price()}
           >
             <span className="fa fa-shopping-cart" />
           </Button>

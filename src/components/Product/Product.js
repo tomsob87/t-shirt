@@ -13,7 +13,7 @@ const Product = props => {
       <div>
         <header>
           <h2 className={styles.name}>{props.title}</h2>
-          <span className={styles.price}>Price: {props.getPrice()} $</span>
+          <span className={styles.price}>Price: {props.price()} $</span>
         </header>
 
         <ProductForm
@@ -22,7 +22,7 @@ const Product = props => {
           title={props.title}
           currentSize={props.currentSize}
           currentColor={props.currentColor}
-          getPrice={() => props.getPrice()}
+          price={() => props.price()}
           
         />
 

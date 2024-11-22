@@ -14,7 +14,7 @@ const Button = (props) => {
                     Name: props.title,
                     Size: props.currentSize,
                     Color: props.currentColor,
-                    Price: props.getPrice(),
+                    Price: props.price(),
                 }
             ]
 
