@@ -1,5 +1,4 @@
 import styles from './Product.module.scss';
-import Button from '../Button/Button';
 import ProductImage from '../ProductImage/ProductImage';
 import ProductForm from '../ProductForm/ProductForm';
 

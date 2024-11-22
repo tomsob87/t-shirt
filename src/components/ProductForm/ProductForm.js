@@ -1,22 +1,16 @@
-
-import styles from '../Product/Product.module.scss'
+import OptionColor from '../OptionColor/OptionColor';
+import OptionSize from '../OptionSize/OptionSize';
+import styles from './ProductForm.module.scss';
 import Button from '../Button/Button';
 
 const ProductForm = props => {
     return (
         <form>
-          <div className={styles.sizes}>
-            <h3 className={styles.optionLabel}>Sizes</h3>
-            <ul className={styles.choices}>
-              {props.sizeOptions}
-            </ul>
-          </div>
-          <div className={styles.colors}>
-            <h3 className={styles.optionLabel}>Colors</h3>
-            <ul className={styles.choices}>
-            {props.colorOptions}
-            </ul>
-          </div>
+          <OptionSize sizeOptions={props.sizeOptions} />
+
+          <OptionColor colorOptions={props.colorOptions} 
+          />
+          
           <Button className={styles.button}
             title={props.title}
             currentSize={props.currentSize}

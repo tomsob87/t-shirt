@@ -2,7 +2,7 @@ import { useState } from 'react';
 import productsData from '../../data/products';
 import Product from '../Product/Product';
 import clsx from 'clsx';
-import styles from '../Product/Product.module.scss'
+import styles from '../ProductForm/ProductForm.module.scss';
 
 const Products = () => {
   const [products]  = useState(productsData);
